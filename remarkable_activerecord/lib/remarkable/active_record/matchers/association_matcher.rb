@@ -98,7 +98,7 @@ module Remarkable
           end
 
           def table_has_column?(klass, table_name, column)
-            klass.connection.columns(table_name, 'Remarkable column retrieval').any?{|c| c.name == column }
+            klass.connection.columns(table_name).any?{|c| c.name == column }
           end
 
           def klass_table_has_column?(klass, column)

@@ -43,9 +43,11 @@ module Remarkable
               conditions << "#{subject_class.primary_key} != '#{@subject.send(primary_key)}'"
             end
 
-            options = conditions.empty? ? {} : { :conditions => conditions.join(' AND ') }
+            #options = conditions.empty? ? {} : { :conditions => conditions.join(' AND ') }
+            options = conditions.empty? ? '' : conditions.join(' AND ')
 
-            return true if @existing = subject_class.find(:first, options)
+            #return true if @existing = subject_class.find(:first, options)
+            return true if @existing = subject_class.where(options).first
             raise ScriptError, "could not find a #{subject_class} record in the database" + message
           end
 
@@ -173,7 +175,8 @@ module Remarkable
             conditions = { scope => values, @attribute => @value }
 
             # Get values from the database, get the scope attribute and map them to string.
-            db_values = subject_class.find(:all, :conditions => conditions, :select => scope)
+            #db_values = subject_class.find(:all, :conditions => conditions, :select => scope)
+            db_values = subject_class.select(scope).where(conditions).to_a
             db_values.map!{ |r| r.send(scope).to_s }
 
             if value_to_return = (values - db_values).first
