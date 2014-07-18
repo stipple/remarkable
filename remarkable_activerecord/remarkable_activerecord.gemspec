@@ -52,9 +52,9 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rake>, ["= 0.8.7"])
       s.add_development_dependency(%q<jeweler>, ["= 1.4.0"])
       s.add_development_dependency(%q<sqlite3-ruby>, ["= 1.2.5"])
-      s.add_runtime_dependency(%q<rspec>, [">= 2.0.0.alpha11"])
-      s.add_runtime_dependency(%q<remarkable>, ["~> 4.0.0.alpha4"])
-      s.add_runtime_dependency(%q<remarkable_activemodel>, ["~> 4.0.0.alpha4"])
+      s.add_runtime_dependency(%q<rspec>, ["~> 3"])
+      s.add_runtime_dependency(%q<remarkable>, ["~> 5"])
+      s.add_runtime_dependency(%q<remarkable_activemodel>, ["~> 5"])
     else
       s.add_dependency(%q<activemodel>, [">= 3.0"])
       s.add_dependency(%q<activerecord>, [">= 3.0"])
@@ -62,8 +62,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rake>, ["= 0.8.7"])
       s.add_dependency(%q<jeweler>, ["= 1.4.0"])
       s.add_dependency(%q<sqlite3-ruby>, ["= 1.2.5"])
-      s.add_dependency(%q<rspec>, [">= 2.0.0.alpha11"])
-      s.add_dependency(%q<remarkable>, ["~> 4.0.0.alpha4"])
+      s.add_dependency(%q<rspec>, ["~> 3"])
+      s.add_dependency(%q<remarkable>, ["~> 5"])
       s.add_dependency(%q<remarkable_activemodel>, ["~> 4.0.0.alpha4"])
     end
   else
@@ -73,8 +73,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rake>, ["= 0.8.7"])
     s.add_dependency(%q<jeweler>, ["= 1.4.0"])
     s.add_dependency(%q<sqlite3-ruby>, ["= 1.2.5"])
-    s.add_dependency(%q<rspec>, [">= 2.0.0.alpha11"])
-    s.add_dependency(%q<remarkable>, ["~> 4.0.0.alpha4"])
+    s.add_dependency(%q<rspec>, ["~> 3"])
+    s.add_dependency(%q<remarkable>, ["~> 5"])
     s.add_dependency(%q<remarkable_activemodel>, ["~> 4.0.0.alpha4"])
   end
 end

@@ -3,8 +3,8 @@ module RSpec #:nodoc:
     # Overwrites to provide I18n on should and should_not.
     #
     def self.generated_description
-      return nil if last_should.nil?
-      verb = Remarkable.t "remarkable.core.#{last_should}", :default => last_should.to_s.gsub('_',' ')
+      return nil if last_expectation_handler.nil?
+      verb = Remarkable.t "remarkable.core.#{last_expectation_handler}", :default => last_expectation_handler.to_s.gsub('_',' ')
       "#{verb} #{last_description}"
     end
   end
@@ -23,9 +23,10 @@ module RSpec #:nodoc:
       # NOTE: Hack. Disabled examples is not the same as pending examples
       # However, the rspec runner is monolithic and doesn't have a hook to process
       # examples based on metadata
-      alias_example_to :xexample, :disabled => true, :pending => true
-      alias_example_to :xit, :disabled => true, :pending => true
-      alias_example_to :xspecify, :disabled => true, :pending => true
+      # mpd - Commented these for RSpec 3.0 upgrade
+      #alias_example_to :xexample, :disabled => true, :pending => true
+      #alias_example_to :xit, :disabled => true, :pending => true
+      #alias_example_to :xspecify, :disabled => true, :pending => true
     end
   end
 end
